@@ -1,7 +1,7 @@
 const path =require("path");
 const fs = require("fs");
 
-const templatesDir = path.resolve(__dirname, "../templates");
+const templatesDir = path.resolve(__dirname, "../template");
 
 const render = employees => {
     const html = [];
@@ -52,8 +52,8 @@ const renderManager = manager => {
     };
 
     const renderMain = html => {
-        const template = fs.readFileSync(path.resolve(templatesDir, "main.html"), "utf8");
-        return replacePlaceholders(template, "profile", html);
+        const template = fs.readFileSync(path.resolve(templatesDir, "profile.html"), "utf8");
+        return replacePlaceholders(template, "test", html);
     };
 
     const replacePlaceholders = (template, placeholder, value) => {

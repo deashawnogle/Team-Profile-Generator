@@ -7,7 +7,7 @@ const Manager = require("./Develop/lib/Manager");
 const Engineer = require("./Develop/lib/Engineer");
 const render = require("./Develop/lib/htmlRenderer");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "profile.html");
+const outputPath = path.join(OUTPUT_DIR, "test.html");
 const employee = [];
 
 const questions = [{
