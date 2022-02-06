@@ -1,10 +1,9 @@
 
 const fs = require("fs");
 const inquirer = require("inquirer");
-const Intern = require("./test/Intern");
-const Manager = require("./test/Manager");
-const Engineer = require("./test/Engineer");
-const Employee = require("./test/Employee");
+const Intern = require("./Develop/lib/Intern");
+const Manager = require("./Develop/lib/Manager");
+const Engineer = require("./Develop/lib/Engineer");
 
 const questions = [{
     type: "input",
@@ -23,8 +22,8 @@ const questions = [{
 },
 {
     type: "list",
-    message: "Please type employee's position?",
-    name: "position",
+    message: "Please type employee's role?",
+    name: "role",
     choices: [
         "Intern",
         "Manager",
@@ -33,3 +32,27 @@ const questions = [{
 }
 ]
 
+
+
+// // Create HTML file
+// function writeToFile(fileName, data) {
+//     fs.writeFile(fileName, data, (err) => {
+//       err ? console.error(`We had an error: ${err}`) : console.log("HTML file created");
+//     });
+//   } 
+
+
+
+
+
+// function writeToFile(fileName, data) {
+//     fs.writeFile(`${fileName}`, data, (err) =>
+//         err ? console.error('Error! : ' + err) : console.log('HTML generated'))
+// }
+
+
+// function init() {
+//     inquirer.prompt(questions).then((data) => writeToFile('main.html', (data)))
+// }
+
+// init();
