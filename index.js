@@ -2,12 +2,12 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const path = require('path');
-const Intern = require("./Develop/lib/Intern");
-const Manager = require("./Develop/lib/Manager");
-const Engineer = require("./Develop/lib/Engineer");
-const render = require("./Develop/lib/htmlRenderer");
+const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const render = require("./lib/htmlRenderer");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "test.html");
+const outputPath = "./output/test.html"
 const employee = [];
 
 const questions = [{
@@ -42,7 +42,7 @@ function employeeQuestion() {
     inquirer.prompt(questions)
     .then(response => {
         let employeeRole = response.role;
-
+            console.log(employeeRole)
         if (employeeRole === "Manager") {
             inquirer.prompt([
                 {
@@ -62,7 +62,7 @@ function employeeQuestion() {
             ]).then(function(employeeInfo) {
                 let newMember = new Manager (response.name, response.id, response.email, employeeInfo.officeNumber);
                 employee.push(newMember);
-                if (employee.moreEmployee === "Yes") {
+                if (employeeInfo.moreEmployee === "Yes") {
                     employeeQuestion();
                 }
                 else {
@@ -91,7 +91,7 @@ function employeeQuestion() {
                 let newMember = new Engineer(response.name, response.id, response.email, employeeInfo.github);
                 employee.push(newMember);
                 if (employeeInfo.moreEmployee === "Yes") {
-                    employeeQuestion ();
+                    employeeQuestion();
                 }
                 else {
                     createHTML();
@@ -134,7 +134,8 @@ function employeeQuestion() {
 employeeQuestion();
 
 function createHTML() {
-    fs.writeFileSync(outputPath, render(employee), "utf-8")
+    
+    fs.writeFileSync(outputPath, render(employee))
 }
 
 
