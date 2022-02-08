@@ -15,4 +15,4 @@ test ("test all Managers method", () => {
     expect (manager.getOfficeNumber()).toEqual(2)
     expect (manager.getRole()).toEqual("Manager")
 
-})
+});
