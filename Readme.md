@@ -53,3 +53,6 @@ Github Repository : <a href="https://github.com/deashawnogle">deashawnogle</a>
 
 ## Deployed Link
 ------------------
+<a href ="https://deashawnogle.github.io/Team-Profile-Generator/">
+https://deashawnogle.github.io/Team-Profile-Generator/
+</a>
