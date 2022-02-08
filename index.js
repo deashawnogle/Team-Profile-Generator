@@ -1,4 +1,4 @@
-
+//Global Variable
 const fs = require("fs");
 const inquirer = require("inquirer");
 const path = require('path');
@@ -10,6 +10,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = "./output/test.html"
 const employee = [];
 
+//General Question for Employee
 const questions = [{
     type: "input",
     message: "Please type employee's name?",
@@ -37,12 +38,12 @@ const questions = [{
 }
 ];
 
-
+//function for the questions Manager / Engineer / Intern
 function employeeQuestion() {
     inquirer.prompt(questions)
     .then(response => {
         let employeeRole = response.role;
-            console.log(employeeRole)
+            //console.log(employeeRole)
         if (employeeRole === "Manager") {
             inquirer.prompt([
                 {
@@ -133,32 +134,10 @@ function employeeQuestion() {
 
 employeeQuestion();
 
+//Function for create HTML
 function createHTML() {
     
     fs.writeFileSync(outputPath, render(employee))
 }
 
 
-
-// // Create HTML file
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, (err) => {
-//       err ? console.error(`We had an error: ${err}`) : console.log("HTML file created");
-//     });
-//   } 
-
-
-
-
-
-// function writeToFile(fileName, data) {
-//     fs.writeFile(`${fileName}`, data, (err) =>
-//         err ? console.error('Error! : ' + err) : console.log('HTML generated'))
-// }
-
-
-// function init() {
-//     inquirer.prompt(questions).then((data) => writeToFile('main.html', (data)))
-// }
-
-// init();
