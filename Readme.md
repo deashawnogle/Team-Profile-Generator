@@ -1,9 +1,5 @@
 # Team Profile Generator
 
-## Image Preview
-
-<img src = "">
-
 
   ## License
   ------------------
@@ -17,6 +13,13 @@
   - [Github](#github)
   - [Email](#email)
   - [Deployed Link](#deploy)
+
+## Image Preview
+
+<img src = "./Images/TeamProfile.png">
+
+## Recorded Video
+<a href="https://watch.screencastify.com/v/KpUXECxaPwjuAsylisuk">Recorded Video</a>
 
 ##  Description
 ------------------
@@ -39,7 +42,7 @@
 - intern.test.js
 - manager.test.js
 
-<img src = "">
+<img src = "./Images/NPM Test.png">
 
 
 ## Contact
